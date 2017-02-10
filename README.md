@@ -129,7 +129,7 @@ function onSSTransitionProgChg(SlideShow, AllImgs, CurrImg, CurrImgIdx, Progress
 MySS.addTransitionProgressChangeListener(onSSTransitionProgChg);
 ```
 ```javascript
-MySS.addTransitionProgressChangeListener(onSSTransitionProgChg);
+MySS.removeTransitionProgressChangeListener(onSSTransitionProgChg);
 ```
 
 ### Slide Change Started Listener
