@@ -173,6 +173,6 @@ Parameters passed to triggered function:
 |------------------|-------------|
 | **`caller`**     | The slideshow that raised this event. This will be an object with all the above control functions. |
 | **`AllImgs`**    | All currently loaded image objects. |
-| **`CurrImg`**    | The image **_to which_** we have/are traditional to. |
+| **`CurrImg`**    | The image **_to which_** we have transitioned/are transitioning to. |
 | **`CurrImgIdx`** | The (zero-based) index of the image **_to which_** we have transitioned to. |
 | **`Progress`**   | Percentage of the animation that has been completed. Values range from 0 to 1 (for example, 0.5 is 50%). |
