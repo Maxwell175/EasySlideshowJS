@@ -3,6 +3,8 @@ The easy way to make slideshows.
 
 This is specifically made to be a barebones design to allow you to expand on top of it.
 
+A working demo is available at: https://mdtech-us-man.github.io/EasySlideshowJS/Demo/
+
 # Requirements
 1. EasyResizeToParent (https://github.com/MDTech-us-MAN/EasyResizeToParent)
     * This library is not required for the correct operation, but if you do not include it, you will have to manually set slide width by [adding a custom CSS class](#basic-usage).
