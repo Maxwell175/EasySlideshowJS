@@ -211,7 +211,7 @@ window.EasySlideshowJS = function(ContainingDiv, ImageObjs, DefaultDuration, Fad
 	var firstImg = document.createElement('img');
 	if (ImageObjs[0].imgLink) {
 		var firstImgLink = document.createElement('a');
-		firstImgLink.href = ImageObjs[0].imgLink;
+		firstImgLink.href = (ImageObjs[0].imgLink === true ? ImageObjs[0].imgSrc : ImageObjs[0].imgLink);
 		firstImgLink.appendChild(firstImg);
 	}
 	firstImg.src = ImageObjs[0].imgSrc;
@@ -228,7 +228,9 @@ window.EasySlideshowJS = function(ContainingDiv, ImageObjs, DefaultDuration, Fad
 		ImageObjs[0].element = firstImg;
 	}
 	// Force resize immediately!
-	window.DoEasyResizeToParent();
+	if (window.DoEasyResizeToParent) {
+		window.DoEasyResizeToParent();
+	}
 	firstImg.onload = function () {
 		firstImg.style.zIndex = '1';
 		SlideChangeStartListeners.forEach(function (elm) {
@@ -263,7 +265,7 @@ window.EasySlideshowJS = function(ContainingDiv, ImageObjs, DefaultDuration, Fad
 		var nextImg = document.createElement('img');
 		if (ImageObjs[nextIdx].imgLink) {
 			var nextImgLink = document.createElement('a');
-			nextImgLink.href = ImageObjs[nextIdx].imgLink;
+			firstImgLink.href = (ImageObjs[nextIdx].imgLink === true ? ImageObjs[nextIdx].imgSrc : ImageObjs[nextIdx].imgLink);
 			nextImgLink.appendChild(nextImg);
 		}
 		nextImg.loaded = false;
@@ -282,7 +284,9 @@ window.EasySlideshowJS = function(ContainingDiv, ImageObjs, DefaultDuration, Fad
 			ImageObjs[nextIdx].element = nextImg;
 		}
 		// Force resize immediately!
-		window.DoEasyResizeToParent();
+		if (window.DoEasyResizeToParent) {
+			window.DoEasyResizeToParent();
+		}
 		nextImg.onload = function() {
 			nextImg.loaded = true;
 			if (nextImg.showOnLoaded) {
@@ -467,7 +471,7 @@ window.EasySlideshowJS = function(ContainingDiv, ImageObjs, DefaultDuration, Fad
 			var nextImg = document.createElement('img');
 			if (ImageObjs[nextIdx].imgLink) {
 				var nextImgLink = document.createElement('a');
-				nextImgLink.href = ImageObjs[nextIdx].imgLink;
+				nextImgLink.href = (ImageObjs[nextIdx].imgLink === true ? ImageObjs[nextIdx].imgSrc : ImageObjs[nextIdx].imgLink);
 				nextImgLink.appendChild(nextImg);
 			}
 			nextImg.loaded = false;
